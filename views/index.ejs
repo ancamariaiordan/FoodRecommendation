@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food recomendation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+
+  .feature-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.75rem;
+  }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">🤤 Food, food, food...</a>
+    </div>
+  </nav>
+
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">What should I eat today?</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Should I chose a 🍔 or something healthy like a 🥗 ? Or maybe a dessert?</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <form action="/" id="form" class="form" method="POST">
+          <!-- <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Find my food</button> -->
+          <button type="submit" class="btn btn-primary btn-lg px-4 me-sm-3">Find my food</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="overflow-hidden">
+    <% if (locals.yourMeal && locals.imageMeal) { %>
+      <div class="container px-5">
+        <h2> You should try <%= yourMeal %></h2>
+      </div>
+      <div>
+        <img src = "<%= imageMeal %>/preview" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Food image" width="300" height="300" loading="lazy">
+      </div>
+      <% } else {%>
+        <h2> You're not eating today?</h2>
+      <% } %>
+    </div>
+  
+
+  </div>
+
+  <footer>
+      <p class="text-body-secondary">© <%= new Date().getFullYear() %></p>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>
